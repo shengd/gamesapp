@@ -7,8 +7,8 @@ gem 'rails', '3.2.2'
 
 gem 'mysql2'
 
-gem 'mongrel', '>= 1.2.0.pre2'
-gem 'dispatcher'
+#gem 'mongrel', '>= 1.2.0.pre2'
+#gem 'dispatcher'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -23,6 +23,14 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :development, :test do
+  gem 'rspec-rails', '2.9.0'
+end
+
+group :test do
+  gem 'capybara', '1.1.2'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
