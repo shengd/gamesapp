@@ -7,6 +7,8 @@ gem 'rails', '3.2.2'
 
 gem 'mysql2'
 
+gem 'mongrel', '>= 1.2.0.pre2'
+gem 'dispatcher'
 
 # Gems used only for assets and not required
 # in production environments by default.
