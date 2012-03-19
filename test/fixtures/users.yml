@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  login: MyString
+  email: MyString
+  hashed_pswd: MyString
+  salt: MyString
+
+two:
+  login: MyString
+  email: MyString
+  hashed_pswd: MyString
+  salt: MyString
