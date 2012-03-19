@@ -4,7 +4,7 @@
   <tr>
     <th>Login</th>
     <th>Email</th>
-    <th>Hashed pswd</th>
+    <th>Password digest</th>
     <th>Salt</th>
     <th></th>
     <th></th>
@@ -15,7 +15,7 @@
   <tr>
     <td><%= user.login %></td>
     <td><%= user.email %></td>
-    <td><%= user.hashed_pswd %></td>
+    <td><%= user.password_digest %></td>
     <td><%= user.salt %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>

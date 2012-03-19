@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
 gem 'bootstrap-sass', '2.0.0'
+gem 'bcrypt-ruby', '3.0.1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -24,6 +25,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :development do
+  gem 'annotate', '~> 2.4.1.beta'
+end
 
 group :development, :test do
   gem 'rspec-rails', '2.9.0'
