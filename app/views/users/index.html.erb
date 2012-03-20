@@ -4,7 +4,9 @@
   <tr>
     <th>Login</th>
     <th>Email</th>
-    <th>Password digest</th>
+    <% if Rails.env.development? %>
+      <th>Password digest</th>
+    <% end %>
     <th>Salt</th>
     <th></th>
     <th></th>
@@ -15,7 +17,9 @@
   <tr>
     <td><%= user.login %></td>
     <td><%= user.email %></td>
-    <td><%= user.password_digest %></td>
+    <% if Rails.env.development? %>
+      <td><%= user.password_digest %></td>
+    <% end %>
     <td><%= user.salt %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>

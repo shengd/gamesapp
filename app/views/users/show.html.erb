@@ -1,24 +1,43 @@
+<% provide(:title, @user.login) %>
+
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.login %>
+      </h1>
+    </section>
+  </aside>
+</div>
+
+<!--
 <p>
   <b>Login:</b>
-  <%= @user.login %>
+  <= @user.login %>
 </p>
+-->
 
 <p>
   <b>Email:</b>
   <%= @user.email %>
 </p>
 
+<% if Rails.env.development? %>
 <p>
   <b>Password digest:</b>
   <%= @user.password_digest %>
 </p>
+<% end %>
 
+<!--
 <p>
   <b>Salt:</b>
-  <%= @user.salt %>
+  <= #@user.salt %>
 </p>
+-->
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

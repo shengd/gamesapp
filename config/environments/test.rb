@@ -34,4 +34,10 @@ Gamesapp::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # We aren't testing password security, spend less time on encryption for the tests
+  require 'bcrypt'
+  silence_warnings do
+    BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST
+  end
 end
