@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  force_ssl
-
   # GET /users
   # GET /users.json
   def index
