@@ -4,7 +4,7 @@ describe "User pages:" do
   subject { page }
 
   describe "Signup page" do
-    before { visit signup_path }
+    before { visit newaccount_path }
 
     it { should have_selector('h1', text: 'Create account') }
     it { should have_selector('title', text: full_title('Create account')) }
@@ -20,7 +20,7 @@ describe "User pages:" do
   end
 
   describe "Account creation" do
-    before { visit signup_path }
+    before { visit newaccount_path }
 
     describe "using invalid information" do
       it "should not create a user" do
@@ -30,7 +30,7 @@ describe "User pages:" do
 
     describe "using valid information" do
       before do
-        fill_in "Login", with: "example"
+        fill_in "Username", with: "example"
         fill_in "Email", with: "user@example.com"
         fill_in "Password", with: "foobar"
         fill_in "Confirm password", with: "foobar"

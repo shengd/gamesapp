@@ -1,0 +1,18 @@
+<% provide(:title, "Login") %>
+<h1>Login</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+      <%= f.label :login, "Username" %>
+      <%= f.text_field :login %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "Login", class: "btn btn-large btn-primary" %>
+    <% end %>
+
+    <p>New user? Ask around to get access.</p>
+  </div>
+</div>

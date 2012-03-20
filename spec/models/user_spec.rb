@@ -11,8 +11,8 @@ describe User do
   it { should respond_to(:login) }
   it { should respond_to(:email) }
   it { should respond_to(:password_digest) }
-  it { should respond_to(:salt) }
 
+  it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
 
   it { should be_valid }
@@ -89,10 +89,10 @@ describe User do
     it { should_not be_valid }
   end
 
-  describe "password confirmation should not be nil" do
-    before { @user.password_confirmation = nil }
-    it { should_not be_valid }
-  end
+  #describe "password confirmation should not be nil" do
+  #  before { @user.password_confirmation = nil }
+  #  it { should_not be_valid }
+  #end
 
   describe "should authenticate" do
     before { @user.save }
@@ -113,5 +113,10 @@ describe User do
   describe "password should not be too short" do
     before { @user.password = @user.password_confirmation = "a" * 5 }
     it { should be_invalid }
+  end
+
+  describe "remember token" do
+    before { @user.save }
+    its(:remember_token) { should_not be_blank }
   end
 end
