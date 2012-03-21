@@ -3,7 +3,12 @@
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
-      <%= render "form_#{yield(:usr_form_type)}", form: f %>
+      <%= render "form_#{usr_form_type}", form: f %>
+    <% end %>
+
+    <% unless @user.new_record? %>
+      <%= gravatar_for @user %>
+      <a href="http://gravatar.com/emails">change</a>
     <% end %>
   </div>
 </div>

@@ -2,7 +2,6 @@
 
 <h1>Create account</h1>
 
-<% provide(:usr_form_type, 'create') %>
-<%= render 'form' %>
+<%= render 'form', usr_form_type: 'create' %>
 
 <%= link_to 'Back', users_path %>

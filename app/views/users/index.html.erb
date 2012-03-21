@@ -1,33 +1,11 @@
+<%= provide(:title, 'Users') %>
 <h1>Listing users</h1>
 
-<table>
-  <tr>
-    <th>Login</th>
-    <th>Email</th>
-    <% if Rails.env.development? %>
-      <th>Password digest</th>
-    <% end %>
-    <th>Salt</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<!--magic!-->
+<%= will_paginate %>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.login %></td>
-    <td><%= user.email %></td>
-    <% if Rails.env.development? %>
-      <td><%= user.password_digest %></td>
-    <% end %>
-    <td><%= user.salt %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<ul class="users">
+  <%= render @users %>
+</ul>
 
-<br />
-
-<%= link_to 'New User', new_user_path %>
+<%= will_paginate %>
